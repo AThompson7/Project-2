@@ -11,7 +11,7 @@ Two .csv files were utilized for this project. The files are located within the 
 
 Originally, the Kaggle dataset also included a reviews.csv file. It was decided that for the purposes of our analysis the reviews.csv file should not be used as it contained qualitative data such as reviewer names of airbnb's and their review comments. Data such as this would be difficult to draw any conclusions from and make comparisons to the other tables. 
 
-To extract the data, Jupyter Notebook was used and pandas's read_csv function was used to load the raw csv's from our Resources folder into an initial data frame.
+To extract the data, Jupyter Notebook was used and pandas's read_csv function was used to load the raw csvs from our Resources folder into an initial data frame.
 
 ## **Step 2: Transform**
 Each of the .csv files were examined for relevance and usability to achieve the project’s target. The following lists the columns of each .csv file which were chosen to be cleaned using Pandas/Jupyter Notebooks.
