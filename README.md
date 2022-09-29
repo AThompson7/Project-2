@@ -9,6 +9,10 @@ Nick Taheri   &emsp; &emsp; &emsp;  Aidan Thompson
 ## **Step 1: Extraction**
 Two .csv files were utilized for this project. The files are located within the ‘Resource’ folder which were both acquired from https://www.kaggle.com/datasets/airbnb/seattle.
 
+Originally, the Kaggle dataset also included a reviews.csv file. It was decided that for the purposes of our analysis the reviews.csv file should not be used as it contained qualitative data such as reviewer names of airbnb's and their review comments. Data such as this would be difficult to draw any conclusions from and make comparisons to the other tables. 
+
+To extract the data, Jupyter Notebook was used and pandas's read_csv function was used to load the raw csv's from our Resources folder into an initial data frame.
+
 ## **Step 2: Transform**
 Each of the .csv files were examined for relevance and usability to achieve the project’s target. The following lists the columns of each .csv file which were chosen to be cleaned using Pandas/Jupyter Notebooks.
 
@@ -49,12 +53,12 @@ Detailed steps to clean and transform each .csv file:
 
 •  Convert the date column to datetime with pd.to_datetime()  
 •  Convert the string ‘price’ column to float using .astype(float)  
-•  To convert the string ‘weekly_price’ and ‘monthly_price’ to numeric values, remove the currency signs with .replace() then convert to numeric using pd.to_numeric  
+•  To convert the string ‘weekly_price’, ‘monthly_price’ and 'price' to numeric values, remove the currency signs with .replace() then convert to numeric using pd.to_numeric  
 •  Convert  ‘accommodates’ and ‘square_feet’ with pd.to_numeric  
 
 10. Replace the NaN values in calendar.csv using .fillna(‘$0’)
 
-11. Filter the zipcode column with .str.len() == 5 to retain accurately input data
+11. Filter the zipcode column with .str.len() == 5 to filter out invalid zipcodes not equal to 5 characters
 
 12. Check the .csv data types have been successfully altered with .dtypes
 
@@ -77,13 +81,13 @@ Check the join is successful using pd.read_sql_query.head().
 
 The engine uploads the SQL data.
 
-The created SQL schema has four tables due to the splitting of work between group members:<br>
+The created SQL schema has four tables each focused on sub-categories of data:<br>
  •	'calendar'<br>
  •	'listings_host'<br>
  •	'listings_reviews'<br>
  •	'type_and_price'<br>
  
- Note: A postgresSQL protocal was employed to fulfill credintials requirements.
+ Note: A postgresSQL protocol was employed to fulfill credentials requirements.
 
 ## Final Table
 ![AirBnb](Images/project.png)
