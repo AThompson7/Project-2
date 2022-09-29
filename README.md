@@ -27,9 +27,9 @@ Detailed steps to clean and transform each .csv file:
 
 1. Import Dependencies
 
-  *Import Pandas
-  *from sqlalchemy import create_engine
-  *from sqlalchemy import inspect
+•Import Pandas
+•from sqlalchemy import create_engine
+•from sqlalchemy import inspect
 
 2. Create the path to the .csv file
 
@@ -47,10 +47,10 @@ Detailed steps to clean and transform each .csv file:
 
 9. Convert columns to usable data types 
 
-  *Convert the date column to datetime with pd.to_datetime()
-  *Convert the string ‘price’ column to float using .astype(float)
-  *To convert the string ‘weekly_price’ and ‘monthly_price’ to numeric values, remove the currency signs with .replace() then convert to numeric using pd.to_numeric
-  *Convert  ‘accommodates’ and ‘square_feet’ with pd.to_numeric
+•Convert the date column to datetime with pd.to_datetime()
+•Convert the string ‘price’ column to float using .astype(float)
+•To convert the string ‘weekly_price’ and ‘monthly_price’ to numeric values, remove the currency signs with .replace() then convert to numeric using pd.to_numeric
+•Convert  ‘accommodates’ and ‘square_feet’ with pd.to_numeric
 
 10. Replace the NaN values in calendar.csv using .fillna(‘$0’)
 
